@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">The-HELP-App</string>
+    <string name="continue_as_fellow">Continue as Fellow</string>
+    <string name="continue_as_mentor_advisor">Continue as Mentor/Advisor</string>
+    <string name="settings">Settings</string>
+    <string name="profile">Profile</string>
+    <string name="resources">Resources</string>
+    <string name="knowledege_cafe">Knowledge Cafe</string>
+</resources>
