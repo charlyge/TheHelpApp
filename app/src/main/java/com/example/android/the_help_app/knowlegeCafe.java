@@ -11,12 +11,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class knowlegeCafe extends Fragment {
     private RecyclerView recyclerView;
-    private ArrayList<chats> chatsArrayList = new ArrayList<>();
+    private List<chats> chatsArrayList = new ArrayList<>();
     private chatAdapter chatAdapter;
-    private int numlist = chatsArrayList.size();
 
     @Nullable
     @Override
@@ -27,7 +27,7 @@ public class knowlegeCafe extends Fragment {
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
-        chatAdapter =new chatAdapter(numlist, chatsArrayList);
+        chatAdapter =new chatAdapter(chatsArrayList);
         recyclerView.setAdapter(chatAdapter);
         PopulateFakeData();
       return rootView;

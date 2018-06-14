@@ -11,60 +11,57 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by DELL PC on 6/12/2018.
  */
 
-public class chatAdapter extends RecyclerView.Adapter<chatAdapter.chatViewHolder> {
+public class chatAdapter extends RecyclerView.Adapter<chatAdapter.ChatViewHolder> {
 
-private int numofViews;
-private ArrayList<chats> chatsArrayList;
-public chatAdapter(int numofViews,ArrayList<chats> chatsArrayList){
-    this.numofViews =numofViews;
-     this.chatsArrayList = chatsArrayList;
-}
+private List<chats> chatsList;
+   public chatAdapter(List<chats> chatsList){
+
+       this.chatsList=chatsList;
+   }
 
     @NonNull
     @Override
-    public chatViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ChatViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         Context context = parent.getContext();
-        View view = LayoutInflater.from(context).inflate(R.layout.knowlege_recycler,parent,false);
-
-        return new chatViewHolder(view);
+        View view = LayoutInflater.from(context).inflate(R.layout.chat_listitem,parent,false);
+        return new ChatViewHolder(view);
     }
 
 
     @Override
-    public void onBindViewHolder(@NonNull chatViewHolder holder, int position) {
-    chats chats = chatsArrayList.get(position);
-    holder.nameTextView.setText(chats.getName());
-    holder.dateTextView.setText(chats.getTime());
-    holder.messageTextView.setText(chats.getMessage());
+    public void onBindViewHolder(@NonNull ChatViewHolder holder, int position) {
+    chats mchats = chatsList.get(position);
+    holder.dateTextView.setText(mchats.getTime());
+    holder.messageTextView.setText(mchats.getMessage());
+    holder.nameTextView.setText(mchats.getName());
     }
 
-    /**
-     * Returns the total number of items in the data set held by the adapter.
-     *
-     * @return The total number of items in this adapter.
-     */
     @Override
     public int getItemCount() {
-        return numofViews;
+        return chatsList.size();
     }
 
-    class chatViewHolder extends RecyclerView.ViewHolder{
-    ImageView imageView;
-    TextView nameTextView;
-    TextView messageTextView;
-    TextView dateTextView;
+    class ChatViewHolder extends RecyclerView.ViewHolder{
+        ImageView imageView;
+        TextView nameTextView;
+        TextView messageTextView;
+        TextView dateTextView;
 
-        public chatViewHolder(View itemView) {
+
+        public ChatViewHolder(View itemView) {
             super(itemView);
-            imageView =(ImageView)itemView.findViewById(R.id.profile_pic);
-            nameTextView = (TextView)itemView.findViewById(R.id.name);
-            messageTextView = (TextView)itemView.findViewById(R.id.message);
-            dateTextView = (TextView)itemView.findViewById(R.id.time);
+            nameTextView = itemView.findViewById(R.id.name);
+            messageTextView = itemView.findViewById(R.id.message);
+            dateTextView = itemView.findViewById(R.id.time);
+
         }
     }
+
+
 }

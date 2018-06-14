@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="20dp"
     tools:context="com.example.android.the_help_app.profile">
 
     <ImageView
@@ -13,13 +14,17 @@
         android:layout_gravity="center"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
+        android:padding="20dp"
         android:src="@mipmap/ic_launcher_round"
         />
     <Button
         android:id="@+id/upload"
         android:layout_gravity="center"
         android:layout_width="wrap_content"
+        android:textColor="@android:color/white"
+        android:background="#ccc666"
         android:layout_height="wrap_content"
+        android:padding="20dp"
         android:text="upload"
         />
     <LinearLayout
@@ -46,6 +51,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:padding="10dp"
         >
         <TextView
             android:layout_height="wrap_content"
@@ -69,7 +75,7 @@
         <TextView
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="Name:"
+            android:text="Email:"
 
             />
         <TextView
@@ -179,6 +185,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:textColor="@android:color/white"
+        android:background="#ccc666"
         android:text="New Project Room"
         />
 </LinearLayout>
